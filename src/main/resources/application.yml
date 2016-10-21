@@ -1,0 +1,24 @@
+# Server Setting
+server:
+  address: 0.0.0.0
+  port: 8018
+
+
+spring:
+#MySql
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shiroTest?characterEncoding=UTF-8&useSSL=false
+    username: root
+    password:
+    initialize: true
+#security:
+#  basic:
+#    enabled: false
+
+#log
+#logging:
+#  level:
+#    org.springframework:
+#      security: DEBUG
+#      hibernate: DEBUG
