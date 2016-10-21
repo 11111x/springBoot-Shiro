@@ -38,7 +38,7 @@ public class ShiroConfiguration {
 
     /**
      * HashedCredentialsMatcher，这个类是为了对密码进行编码的，
-     * 防止密码在数据库里明码保存，当然在登陆认证的生活，
+     * 防止密码在数据库里明码保存，当然在登陆认证的时候，
      * 这个类也负责对form里输入的密码进行编码。
      */
     @Bean(name = "hashedCredentialsMatcher")
@@ -57,7 +57,7 @@ public class ShiroConfiguration {
     @DependsOn("lifecycleBeanPostProcessor")
     public ShiroRealm shiroRealm() {
         ShiroRealm realm = new ShiroRealm();
-        realm.setCredentialsMatcher(hashedCredentialsMatcher());
+//        realm.setCredentialsMatcher(hashedCredentialsMatcher());
         return realm;
     }
 
@@ -105,7 +105,7 @@ public class ShiroConfiguration {
         filterChainDefinitionManager.put("/**", "anon");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionManager);
 
-        shiroFilterFactoryBean.setLoginUrl("/login");
+        shiroFilterFactoryBean.setLoginUrl("/loginPage");
         shiroFilterFactoryBean.setSuccessUrl("/");
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
 

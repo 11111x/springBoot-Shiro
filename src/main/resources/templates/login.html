@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>login</title>
+
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <!--<script src="./js/include.js"></script>-->
+    <!--<script th:src="@{/resources/static/js/jquery-3.1.1.min.js}"></script>-->
+    <script type="text/javascript">
+        $(function () {
+            $('#login').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/login",
+                    data: $('#loginForm').serialize(),
+                    dataType: "json",
+                    success: function (data) {
+//                        alert(data);
+                        window.location.href = "/userInfo";
+                    },
+                    error:function (e) {
+                        console.log(e);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<form id="loginForm">
+    用户名：<input type="text" name="username" id="username" required="true"/>
+    密码：<input type="text" name="password" id="password" required="true"/>
+    记住我<input id="rm" name="rememberMe" type="checkbox"/>
+    <input type="button" value="登陆" id="login"/>
+</form>
+</body>
+</html>

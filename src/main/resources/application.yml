@@ -12,13 +12,30 @@ spring:
     username: root
     password:
     initialize: true
+  thymeleaf:
+    cache: false
+    cache-period: 0
+  template:
+    cache: false
+  jpa:
+      database : MYSQL
+      show-sql : true
+      hibernate:
+        ddl-auto : update
+        # possible values: validate | update | create | create-drop
+        naming-strategy : org.hibernate.cfg.ImprovedNamingStrategy
+      properties:
+        hibernate:
+          dialect : org.hibernate.dialect.MySQL5Dialect
+
 #security:
 #  basic:
 #    enabled: false
 
 #log
-#logging:
-#  level:
-#    org.springframework:
+logging:
+  level:
+    org.springframework:
+      web: INFO
 #      security: DEBUG
 #      hibernate: DEBUG
