@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html >
+<html xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
     <meta charset="UTF-8"/>
     <title>用户信息</title>
 </head>
 <body>
 这个用户权限页面
+<p shiro:hasPermission="sys:add">
+    <button>add</button>
+</p>
 </body>
 </html>

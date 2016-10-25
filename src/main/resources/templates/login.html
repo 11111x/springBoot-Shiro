@@ -16,8 +16,13 @@
                     data: $('#loginForm').serialize(),
                     dataType: "json",
                     success: function (data) {
-//                        alert(data);
-                        window.location.href = "/userInfo";
+//                        alert(data.state);
+                        if ("success"===data.state) {
+                            window.location.href = "/user/userInfo";
+                        }else {
+                            alert(data.Msg);
+                        }
+
                     },
                     error:function (e) {
                         console.log(e);
